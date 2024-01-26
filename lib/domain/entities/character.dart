@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-class Character {
+class CharacterEntity {
   final int id;
   final String name;
   final String status;
@@ -10,11 +8,11 @@ class Character {
   final Object origin;
   final Object location;
   final String image;
-  final Array episode;
+  final List<String> episode;
   final String url;
-  final String created;
+  final DateTime created;
 
-  Character({
+  CharacterEntity({
     required this.id,
     required this.name,
     required this.status,
