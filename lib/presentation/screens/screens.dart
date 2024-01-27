@@ -1,1 +1,1 @@
-export 'characters/home_screen.dart';
+export 'characters/all_characters_screen.dart';
