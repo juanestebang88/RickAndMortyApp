@@ -15,25 +15,28 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassFormism.container(
-      child: Row(
-        children: [
-          _ImageViewer(image: character.image),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                TextLabel.textBold(text: character.name, size: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextLabel.textBold(text: character.species, size: 18),
-                  ],
-                ),
-            
-              ],
+      child: SizedBox(
+        height: 100.0,
+        child: Row(
+          children: [
+            Expanded(child: _ImageViewer(image: character.image)),
+            Expanded(
+              flex: 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextLabel.textBold(text: character.name, size: 24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextLabel.textBold(text: character.species, size: 18),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -51,11 +54,14 @@ class _ImageViewer extends StatelessWidget {
         topLeft: Radius.circular(20),
         bottomLeft: Radius.circular(20),
       ),
-      child: FadeInImage(
-        fit: BoxFit.cover,
-        height: 100.0,
-        image: NetworkImage(image),
-        placeholder: const AssetImage(Constants.loaderRick),
+      child: SizedBox(
+        child: FadeInImage(
+          placeholderFit: BoxFit.contain,
+          fit: BoxFit.cover,
+          height: 100.0,
+          image: NetworkImage(image),
+          placeholder: const AssetImage(Constants.portal),
+        ),
       ),
     );
   }

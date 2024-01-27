@@ -22,3 +22,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+  fonts:
+    - family: rickmorty
+      fonts:
+        - asset: assets/fonts/rickmorty.ttf

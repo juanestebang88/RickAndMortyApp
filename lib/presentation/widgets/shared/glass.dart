@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
@@ -6,10 +7,7 @@ class GlassFormism {
 static BackdropFilter background(){
   return BackdropFilter(
     filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
-    child: const SizedBox(
-      height: 220,
-      width: 360,
-    ),
+    child: const SizedBox.shrink()
   );
 }
 

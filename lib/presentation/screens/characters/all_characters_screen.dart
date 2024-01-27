@@ -14,9 +14,8 @@ class AllCharactersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  Scaffold(
-      extendBodyBehindAppBar: true,
-      bottomNavigationBar: CustomNavigationBar(),
+    return const Scaffold(
+      floatingActionButton: CustomFloatingButton(),
       body: _AllCharactersScreen(),
     );
   }
@@ -47,15 +46,10 @@ class _AllCharactersViewState extends ConsumerState<_AllCharactersScreen> {
           fit: BoxFit.cover,
         ),
         GlassFormism.background(),
-        Column(
-          children: [
-            CustomGridView(
-              characters: allCharacters,
-              loadNextPage: ()=> ref.read(allCharactersProvider.notifier).loadNextPage(),
-            ),
-          ],
+        CustomListView(
+          characters: allCharacters,
+          loadNextPage: ()=> ref.read(allCharactersProvider.notifier).loadNextPage(),
         ),
-            const CustomAppbar(),
       ] 
     );
   }
