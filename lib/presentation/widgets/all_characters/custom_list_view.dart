@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rick_morty/domain/entities/character.dart';
 import 'package:rick_morty/presentation/widgets/widgets.dart';
 
@@ -52,12 +53,8 @@ class _CustomListViewState extends State<CustomListView> {
                 centerTitle: true,
                 background: Padding(
                   padding: const EdgeInsets.only(top: 18.0),
-                  child: TextLabel.textBold(text: 'Rick And Morty', size: 34, isBlue: true),
+                  child: TextLabel.textBoldRM(text: 'Rick And Morty', size: 34, isBlue: true),
                 )
-                // Image.asset(Constants.logo,
-                //     width: MediaQuery.of(context).size.width*0.5,
-                //     height: 50,
-                //   ),
               ),
             ),
           ),
@@ -65,7 +62,10 @@ class _CustomListViewState extends State<CustomListView> {
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 final character = widget.characters[index];
-                return CharacterCard(character: character);
+                return GestureDetector(
+                  onTap: ()=> context.push('/detail-character/${character.id.toString()}'),
+                  child: CharacterCard(character: character)
+                );
               },
               childCount: widget.characters.length,
             ),

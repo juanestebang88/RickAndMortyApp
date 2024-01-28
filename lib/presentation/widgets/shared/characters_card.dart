@@ -25,11 +25,11 @@ class CharacterCard extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TextLabel.textBold(text: character.name, size: 24),
+                  TextLabel.textBoldRM(text: character.name, size: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextLabel.textBold(text: character.species, size: 18),
+                      TextLabel.textBoldRM(text: character.species, size: 18),
                     ],
                   ),
                 ],
@@ -54,14 +54,12 @@ class _ImageViewer extends StatelessWidget {
         topLeft: Radius.circular(20),
         bottomLeft: Radius.circular(20),
       ),
-      child: SizedBox(
-        child: FadeInImage(
-          placeholderFit: BoxFit.contain,
-          fit: BoxFit.cover,
-          height: 100.0,
-          image: NetworkImage(image),
-          placeholder: const AssetImage(Constants.portal),
-        ),
+      child: FadeInImage(
+        placeholderFit: BoxFit.contain,
+        fit: BoxFit.cover,
+        height: 100.0,
+        image: NetworkImage(image),
+        placeholder: const AssetImage(Constants.portal),
       ),
     );
   }

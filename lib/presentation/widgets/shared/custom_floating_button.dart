@@ -33,7 +33,7 @@ class CustomFloatingButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Icon(Icons.favorite, color: Colors.white.withOpacity(0.8),),
-            TextLabel.textBold(text: 'Favorites', size: 15),
+            TextLabel.textBoldRM(text: 'Favorites', size: 15),
           ],
         ),
       ),

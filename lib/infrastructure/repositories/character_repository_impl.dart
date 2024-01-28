@@ -11,4 +11,9 @@ class CharactersRepositoryImpl extends CharactersRepository {
   Future<List<CharacterEntity>> getAllCharacters({int page = 1}) {
     return datasource.getAllCharacters(page: page);
   }
+  
+  @override
+  Future<CharacterEntity> getCharacter({String characterId = '1'}) {
+    return datasource.getCharacter(characterId: characterId);
+  }
 }

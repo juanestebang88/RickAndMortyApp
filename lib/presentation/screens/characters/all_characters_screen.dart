@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rick_morty/config/constants/constants.dart';
 
-import 'package:rick_morty/presentation/providers/characters/character_provider.dart';
-import 'package:rick_morty/presentation/widgets/shared/glass.dart';
+import 'package:rick_morty/presentation/providers/characters/characters_provider.dart';
 import 'package:rick_morty/presentation/widgets/widgets.dart';
 
 class AllCharactersScreen extends StatelessWidget {
@@ -40,12 +38,7 @@ class _AllCharactersViewState extends ConsumerState<_AllCharactersScreen> {
 
     return Stack(
       children:[
-        Image.asset(Constants.backgroundImage,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          fit: BoxFit.cover,
-        ),
-        GlassFormism.background(),
+        const BackgroundApp(),
         CustomListView(
           characters: allCharacters,
           loadNextPage: ()=> ref.read(allCharactersProvider.notifier).loadNextPage(),
@@ -54,3 +47,5 @@ class _AllCharactersViewState extends ConsumerState<_AllCharactersScreen> {
     );
   }
 }
+
+
