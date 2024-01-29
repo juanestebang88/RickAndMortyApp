@@ -1,26 +1,6 @@
-# Rick App Morty
-
-# dev
-
-Execute command for changes in CharacterEntity
-```
-flutter pub run build_runner build
-```
 # Rick and Morty 
 
 This Flutter application, named "Rick and Morty ," utilizes the Rick and Morty API to list all characters from the famous "Rick and Morty" series. The app allows users to view specific details for each character and add them to a favorites list, which is locally stored using the Isar database.
-
-## Screenshots
-
-## Screenshots
-
-![Character List](assets/images/screenshot_characters.png)
-
-![Character Details](assets/images/screenshot_details.png)
-
-![Favorites List](assets/images/screenshot_favorites.png)
-
-
 
 ## Features
 
@@ -50,6 +30,15 @@ flutter pub run build_runner build
 1. Ensure you have an emulator or physical device connected.
 2. Run `flutter run` in the terminal within the project directory.
 
+
+## Screenshots
+
+![Character List](assets/images/screenshot_characters.png)
+
+![Character Details](assets/images/screenshot_details.png)
+
+![Favorites List](assets/images/screenshot_favorites.png)
+
 ## Contributing
 
 If you want to contribute to this application, please follow these steps:
@@ -59,5 +48,3 @@ If you want to contribute to this application, please follow these steps:
 3. Make your changes and commit: `git commit -m "Description of your changes"`.
 4. Push your changes to your forked repository: `git push origin your-branch-name`.
 5. Create a pull request in the original repository.
-
-
