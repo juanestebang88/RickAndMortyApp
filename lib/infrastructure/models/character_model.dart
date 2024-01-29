@@ -5,8 +5,8 @@ class CharacterModel {
     final String species;
     final String type;
     final String gender;
-    final Location origin;
-    final Location location;
+    final String origin;
+    final String location;
     final String image;
     final List<String> episode;
     final String url;
@@ -34,8 +34,8 @@ class CharacterModel {
         species: json["species"],
         type: json["type"],
         gender: json["gender"],
-        origin: Location.fromJson(json["origin"]),
-        location: Location.fromJson(json["location"]),
+        origin: json["origin"]['name'].toString().replaceAll(' (Replacement Dimension)', ''),
+        location: json["location"]['name'].toString().replaceAll(' (Replacement Dimension)', ''),
         image: json["image"],
         episode: List<String>.from(json["episode"].map((x) => x)),
         url: json["url"],
@@ -49,31 +49,11 @@ class CharacterModel {
         "species": species,
         "type": type,
         "gender": gender,
-        "origin": origin.toJson(),
-        "location": location.toJson(),
+        "origin": origin,
+        "location": location,
         "image": image,
         "episode": List<dynamic>.from(episode.map((x) => x)),
         "url": url,
         "created": created.toIso8601String(),
-    };
-}
-
-class Location {
-    final String name;
-    final String url;
-
-    Location({
-        required this.name,
-        required this.url,
-    });
-
-    factory Location.fromJson(Map<String, dynamic> json) => Location(
-        name: json["name"],
-        url: json["url"],
-    );
-
-    Map<String, dynamic> toJson() => {
-        "name": name,
-        "url": url,
     };
 }

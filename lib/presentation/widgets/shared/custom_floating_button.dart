@@ -1,17 +1,28 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rick_morty/config/constants/constants.dart';
+import 'package:rick_morty/presentation/providers/storage/favorites_characters_provider.dart';
 import 'package:rick_morty/presentation/widgets/widgets.dart';
 
-class CustomFloatingButton extends StatelessWidget {
+class CustomFloatingButton extends ConsumerStatefulWidget {
   const CustomFloatingButton({
     super.key,
   });
 
   @override
+  CustomFloatingButtonState createState() => CustomFloatingButtonState();
+}
+
+class CustomFloatingButtonState extends ConsumerState<CustomFloatingButton> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+        ref.read(favoritesCharacterProvider.notifier).loadNextPage().then((value) => 
+        context.push('/favorites-screen'),);
+      },
       child: Container(
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.all(10.0),
@@ -24,7 +35,7 @@ class CustomFloatingButton extends StatelessWidget {
           stops: const [0.0, 1.0],
           colors: [
             Constants.blueOpacityRM,
-            Color.fromARGB(255, 28, 104, 116).withOpacity(0.4)
+            const Color.fromARGB(255, 28, 104, 116).withOpacity(0.4)
           ],
         ),
         borderRadius: BorderRadius.circular(20)

@@ -17,6 +17,13 @@ final appRouter = GoRouter(
             return DetailCharacterScreen(characterId: characterId);
           }
         ),
+        GoRoute(
+          path: 'favorites-screen',
+          name:  FavoritesCharactersScreen.name,
+          builder: (context, state) {
+            return const FavoritesCharactersScreen();
+          }
+        ),
       ]
     ),
   ]

@@ -1,12 +1,18 @@
+import 'package:isar/isar.dart';
+
+part 'character.g.dart';
+
+@collection
 class CharacterEntity {
+  Id? isarId;
   final int id;
   final String name;
   final String status;
   final String species;
   final String type;
   final String gender;
-  final Object origin;
-  final Object location;
+  final String origin;
+  final String location;
   final String image;
   final List<String> episode;
   final String url;

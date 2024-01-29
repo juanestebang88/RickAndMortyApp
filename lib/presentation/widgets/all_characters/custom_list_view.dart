@@ -5,10 +5,12 @@ import 'package:rick_morty/presentation/widgets/widgets.dart';
 
 class CustomListView extends StatefulWidget {
 
+  final String titleList;
   final List<CharacterEntity> characters;
   final VoidCallback? loadNextPage;
 
   const CustomListView({
+    required this.titleList,
     required this.characters,
     this.loadNextPage,
     super.key,
@@ -53,7 +55,7 @@ class _CustomListViewState extends State<CustomListView> {
                 centerTitle: true,
                 background: Padding(
                   padding: const EdgeInsets.only(top: 18.0),
-                  child: TextLabel.textBoldRM(text: 'Rick And Morty', size: 34, isBlue: true),
+                  child: TextLabel.textBoldRM(text: widget.titleList, size: 34, isBlue: true),
                 )
               ),
             ),

@@ -1,4 +1,5 @@
-export 'detail_character/like_button.dart';
+export 'detail_character/image_character.dart';
+export 'detail_character/name_character.dart';
 export 'detail_character/description_property.dart';
 export 'shared/glass.dart';
 export 'shared/background_app.dart';

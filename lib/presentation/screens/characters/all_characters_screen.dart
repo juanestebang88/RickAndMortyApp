@@ -14,19 +14,19 @@ class AllCharactersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       floatingActionButton: CustomFloatingButton(),
-      body: _AllCharactersScreen(),
+      body: AllCharactersView(),
     );
   }
 }
 
-class _AllCharactersScreen extends ConsumerStatefulWidget {
-  const _AllCharactersScreen();
+class AllCharactersView extends ConsumerStatefulWidget {
+  const AllCharactersView({super.key});
 
   @override
-  _AllCharactersViewState createState() => _AllCharactersViewState();
+  AllCharactersViewState createState() => AllCharactersViewState();
 }
 
-class _AllCharactersViewState extends ConsumerState<_AllCharactersScreen> {
+class AllCharactersViewState extends ConsumerState<AllCharactersView> {
   @override
   void initState() {
     ref.read(allCharactersProvider.notifier).loadNextPage();
@@ -40,6 +40,7 @@ class _AllCharactersViewState extends ConsumerState<_AllCharactersScreen> {
       children:[
         const BackgroundApp(),
         CustomListView(
+          titleList: 'Rick App Morty',
           characters: allCharacters,
           loadNextPage: ()=> ref.read(allCharactersProvider.notifier).loadNextPage(),
         ),

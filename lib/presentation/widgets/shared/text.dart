@@ -16,6 +16,8 @@ class TextLabel {
         ? Constants.blueOpacityRM
         : Constants.whiteOpacityRM,
       ),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 
@@ -31,6 +33,8 @@ class TextLabel {
         ? Constants.blueOpacityRM
         : Constants.whiteOpacityRM,
       ),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
     );
   }
 
@@ -48,6 +52,8 @@ class TextLabel {
         : Constants.whiteOpacityRM,
         fontFamily: 'rickmorty',
       ),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 
