@@ -37,6 +37,7 @@ class DetailCharacterScreenState extends ConsumerState<DetailCharacterScreen> {
           SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 NameCharacter(mediaQ: mediaQ, name: character.name),
                 GlassFormism.container(

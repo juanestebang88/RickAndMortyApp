@@ -44,6 +44,7 @@ class _CustomListViewState extends State<CustomListView> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQ = MediaQuery.of(context).size;
     return CustomScrollView(
         controller: scrollController,
         slivers: [
@@ -54,7 +55,10 @@ class _CustomListViewState extends State<CustomListView> {
               child: FlexibleSpaceBar(
                 centerTitle: true,
                 background: Padding(
-                  padding: const EdgeInsets.only(top: 18.0),
+                  padding: EdgeInsets.only(
+                  top: mediaQ.height*0.05,
+                  bottom: mediaQ.height*0.05
+                  ),
                   child: TextLabel.textBoldRM(text: widget.titleList, size: 34, isBlue: true),
                 )
               ),
