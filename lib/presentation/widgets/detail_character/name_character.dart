@@ -15,7 +15,10 @@ class NameCharacter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.only(top: mediaQ.height*0.02),
+      padding: EdgeInsets.only(
+        top: mediaQ.height*0.05,
+        bottom: mediaQ.height*0.05
+        ),
       child: Center(
         child: TextLabel.textBoldRM(
           text: name,
